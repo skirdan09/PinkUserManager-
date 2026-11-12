@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "583435529496",
+    "firebase_url": "https://app9-e22be-default-rtdb.firebaseio.com",
+    "project_id": "app9-e22be",
+    "storage_bucket": "app9-e22be.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583435529496:android:96260a3996044acacd426d",
+        "android_client_info": {
+          "package_name": "com.example.pinkusermanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4e_p5a8_a6oUnzWMq8h1G0PNE2WrbQNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
