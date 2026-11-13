@@ -22,9 +22,21 @@ public class UserStaticInfo {
     }
 
     private void AddUsersInList() {
-        users.add(new User("Настя", "Я усталь", 19, 0));
-        users.add(new User("Настя", "В сети", 19, 1));
-        users.add(new User("Настя", "Я усталь", 19, 2));
-        users.add(new User("Настя", "Привет", 19, 0));
+        User u1 = new User("Рома", "Я устал", 19, 0);
+        u1.setProfileId("id_roma");
+
+        User u2 = new User("Настя", "В сети", 19, 1);
+        u2.setProfileId("id_nastya1");
+
+        User u3 = new User("Вика", "Я усталь", 19, 2);
+        u3.setProfileId("id_vika");
+
+        User u4 = new User("Настя", "Привет", 19, 0);
+        u4.setProfileId("id_nastya2");
+
+        users.add(u1);
+        users.add(u2);
+        users.add(u3);
+        users.add(u4);
     }
 }

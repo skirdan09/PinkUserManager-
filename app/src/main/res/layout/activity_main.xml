@@ -10,12 +10,26 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <ListView
-            android:id="@+id/listView"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:divider="@android:color/transparent"/>
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnArchive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Архив"
+                android:backgroundTint="#FFC0CB"
+                android:onClick="OpenArchive"/>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@android:color/transparent"/>
+        </LinearLayout>
 
         <FrameLayout
             android:layout_width="0dp"
@@ -35,12 +49,20 @@
                 android:background="@android:color/white"
                 android:visibility="gone">
 
+                <ImageView
+                    android:id="@+id/profileBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bars"
+                    android:scaleType="centerCrop"
+                    android:alpha="0.4" />
+
                 <Button
                     android:id="@+id/btnBackToList"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/ic_baseline_keyboard_backspace_24"
                     android:onClick="BackToList"/>
 
@@ -49,32 +71,92 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="right"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/ic_baseline_edit_24"
                     android:onClick="EditUser"/>
+
+                <Button
+                    android:id="@+id/btnAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="80dp"
+                    android:text="В архив"
+                    android:backgroundTint="#FF69B4"
+                    android:onClick="ActionButton"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="100dp"
-                    android:orientation="vertical">
+                    android:layout_marginTop="150dp"
+                    android:layout_marginBottom="60dp"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center_horizontal">
 
                     <TextView
                         android:id="@+id/NameTextView"
                         style="@style/NameText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"/>
+
                     <TextView
                         android:id="@+id/StateTextView"
                         style="@style/StateText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"/>
+
                     <TextView
                         android:id="@+id/AgeTextView"
                         style="@style/BaseContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"/>
+
+                    <ScrollView
+                        android:id="@+id/scrollView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="10dp">
+                        <LinearLayout
+                            android:id="@+id/messagesContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"/>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="#EEFFFFFF">
+
+                    <EditText
+                        android:id="@+id/etMessage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Сообщение..."
+                        android:padding="10dp"
+                        android:background="@android:color/white"/>
+
+                    <Button
+                        android:id="@+id/btnSend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="➤"
+                        android:textSize="20sp"
+                        android:backgroundTint="#FF69B4"
+                        android:onClick="SendMessage"/>
                 </LinearLayout>
             </FrameLayout>
         </FrameLayout>
